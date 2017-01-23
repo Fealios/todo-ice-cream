@@ -30,6 +30,16 @@
             </div>
             <div>
               <button type="submit">Submit</button>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="priority" value="yes"> Priority
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="priority" value=""> Non-priority
+                </label>
+              </div>
             </div>
           </form>
         </div>
@@ -38,8 +48,8 @@
             <div class="col-sm-6">
               <h3>To Do:</h3>
               <h5 class="output"></h5>
-              <button type="submit">Delete selected</button>
-              <button type="submit" id="append">Set to priority</button>
+              <button type="submit">Delete Selected</button>
+              <button type="submit" id="priority">Set/Remove Priority</button>
             </div>
           </form>
 
