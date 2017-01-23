@@ -11,7 +11,7 @@ function Task(userInput, deadlineInput, notesInput, priorityInput) {
 }
 
 Task.prototype.join = function() {
-  return "<div id='" + this.increment + "'><input type='checkbox' name='tasklist' value='" + this.increment + "'>" + this.task + "<br>" + this.deadline + "<br>" + this.notes + "<br></div>";
+  return "<div class='todobox' id='" + this.increment + "'><input type='checkbox' name='tasklist' value='" + this.increment + "'>" + this.task + "<br>" + this.deadline + "<br>" + this.notes + "<br></div>";
 };
 
 

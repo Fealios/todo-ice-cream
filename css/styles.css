@@ -1,3 +1,30 @@
+body {
+  background: #c6ffca;
+}
+
+.todobox {
+  margin: 5px;
+}
+
 .priority {
-  background-color: #f6fca6;
+  background-color: #ffe2f9;
+  border-radius: 3px;
+}
+
+.jumbotron {
+  background-color: #774d20;
+  color: #774d20;
+  background: url(../imgs/icecream.jpg);
+  background-size: contain;
+  background-position: center;
+  border: 3px solid black;
+  margin: 0 -1% 0 -1%;
+}
+
+.jumbotron h1 {
+  margin-left: 15%;
+}
+
+.row {
+  margin-top: 5%;
 }
