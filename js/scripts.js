@@ -32,10 +32,18 @@ $(function(){
     var priorityInput = $("input:radio[name=priority]:checked").val();
     var newTask = new Task (userInput, deadlineInput, notesInput, priorityInput);
 
-    $(".output").append(newTask.join());
-    newTask.priorityChecker();
+    if (!userInput){
+      alert("Please enter some Ice Cream!");
+      } else {
+      $(".output").append(newTask.join());
+      newTask.priorityChecker();
 
-    increment++;
+      increment++;
+
+      $("#input").val("");
+      $("#deadline").val("");
+      $("#notes").val("");
+    };
   });
 
   $("#delete").submit(function(event){
