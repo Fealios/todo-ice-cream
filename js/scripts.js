@@ -1,6 +1,5 @@
 var increment = 0;
 var taskArray = [];
-var dateArray = [];
 
 function Task(userInput, deadlineInput, notesInput) {
   this.task = userInput;
@@ -10,13 +9,9 @@ function Task(userInput, deadlineInput, notesInput) {
 }
 
 Task.prototype.join = function() {
-  return "<input type='checkbox' name='tasklist' value='"+this.increment+"'><span id='"+this.increment +"'> " + this.task + "<br>" + this.deadline + "<br>" + this.notes + "<br></span>";
+  return "<div id='" + this.increment + "'><input type='checkbox' name='tasklist' value='" + this.increment + "'>" + this.task + "<br>" + this.deadline + "<br>" + this.notes + "<br></div>";
 }
 
-function dateBoxCreator(date) {
-  console.log(dateArray);
-  return "<div class='" + date + " " + increment + "'>" + date + "</div>";
-}
 
 $(function(){
   $("#blank").submit(function(event) {
@@ -25,16 +20,9 @@ $(function(){
     var deadlineInput = ($("#deadline").val());
     var notesInput = ($("#notes").val());
     var newTask = new Task (userInput, deadlineInput, notesInput);
-    taskArray.push(newTask);
-    dateArray.push(deadlineInput);
-    dateArray.sort();
-    $(".output").append(dateBoxCreator(deadlineInput));
-    $("#" + deadlineInput).append(newTask.join());
-    console.log(taskArray);
 
+    $(".output").append(newTask.join());
     increment++;
-
-
   });
 
   $("#delete").submit(function(event){
@@ -46,6 +34,16 @@ $(function(){
       $('#'+id).hide();
     });
   });
+
+  $("#append").click(function(event){
+    event.preventDefault();
+
+    $("input:checkbox[name=tasklist]:checked").each(function() {
+      var id = $(this).val();
+      $("#" + id).addClass('priority');
+    });
+  });
+
 });
 
 
